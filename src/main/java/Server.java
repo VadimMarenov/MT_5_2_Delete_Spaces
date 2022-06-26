@@ -21,7 +21,7 @@ public class Server {
                     }
                     final String msg = new String(inputBuffer.array(),0,  bytesCount, StandardCharsets.UTF_8);
                     inputBuffer.clear();
-                    System.out.println("Получено сообщение от клиента :" + msg);
+                    System.out.println("Client: " + msg);
                     String msgWithoutSpaces = TextRedactor.deleteSpaces(msg);
                     socketChannel.write(ByteBuffer.wrap(("Server: " + msgWithoutSpaces).getBytes(StandardCharsets.UTF_8)));
                 }
